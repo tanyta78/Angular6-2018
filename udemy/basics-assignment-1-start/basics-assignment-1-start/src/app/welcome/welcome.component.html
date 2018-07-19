@@ -1,0 +1,17 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <label >Username:</label>
+  <input 
+    type="text"
+    class="form-control"
+    [(ngModel)]="username">
+    <p>Username is {{username}}</p>
+    <button 
+      class="btn btn-primary"
+      [disabled]="!isEmpty()"
+      (click)="onSaveUsername()"
+      >Save username</button>
+</div>
+
