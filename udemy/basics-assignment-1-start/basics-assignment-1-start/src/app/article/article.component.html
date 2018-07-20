@@ -1,5 +1,20 @@
 <li>
   <div id="title">{{title}}</div>
+  <button  class="btn btn-primary"
+  (click)="toggleParagraph()">{{textBtnDetails}} Details</button>
+  <p *ngIf="!isDisplayed">{{description}}</p>
+  <p *ngIf='isClicked; else noClicked'>Below I will add array of clicked events</p>
+  <ng-template #noClicked>
+    <p>Button is not clicked yet!</p>
+  </ng-template>
+  
+  <div *ngFor="let clickElement of clickedArray; let i = index"
+    [ngStyle]="{backgroundColor:getColor(i)}"
+    [ngClass]="{details: i > 4}">
+    {{clickElement}}
+  
+  </div>
+
 </li>
  
 
