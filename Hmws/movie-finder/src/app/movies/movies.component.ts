@@ -9,9 +9,25 @@ import { MoviesService } from '../service/movies.service';
 export class MoviesComponent implements OnInit {
   popular: Object;
   theaters: Object;
+  kids: Object;
+  dramas: Object;
+  searched:any;
+  isSearch: boolean;
  
   constructor( private movieService: MoviesService) {
    
+  }
+
+  search(myQuery){
+    let value = myQuery['search'];
+    this.movieService.findAMovie(value).subscribe(data=>{
+      console.log(data.results);
+      if(data.results.length > 0){
+        this.searched = data;
+        this.isSearch=true;
+      }
+      
+    })
   }
 
   ngOnInit() {
@@ -19,13 +35,24 @@ export class MoviesComponent implements OnInit {
       .getPopular()
       .subscribe(data => {
           this.popular = data;
-          console.log(this.popular);
+        
     })
     this.movieService
       .getTheatres()
       .subscribe(data => {
           this.theaters = data;
-          console.log(this.theaters);
+         
+    })
+    this.movieService
+      .getKids()
+      .subscribe(data => {
+          this.kids = data;
+    })
+    this.movieService
+      .getDramas()
+      .subscribe(data => {
+          this.dramas = data;
+        
     })
   }
 
