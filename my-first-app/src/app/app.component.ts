@@ -10,6 +10,7 @@ export class AppComponent {
   oddNumbers=[1,3,5];
   evenNumbers=[2,4]
   onlyOdd=false;
+  value=15;
   
   onServerAdded(serverData:{serverName:string, serverContent:string}) {
     this.serverElements.push({
