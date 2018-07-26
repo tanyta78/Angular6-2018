@@ -6,6 +6,9 @@ h3{
   }
   
   p {
-	color: blue;
-  }
+	color: rgb(107, 26, 107);
+	}
+	.odd{
+		color: red;
+	}
   

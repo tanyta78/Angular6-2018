@@ -8,6 +8,8 @@ import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
+import { BasicHighlightDirective } from './basic-highlight/basic-highlight.directive';
+import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ServerElementComponent } from './server-element/server-element.componen
     ServerComponent,
     ServersComponent,
     CockpitComponent,
-    ServerElementComponent
+    ServerElementComponent,
+    BasicHighlightDirective,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   serverElements = [{type:'server',name:'TestServer',content:'Just a test!'}];
+  oddNumbers=[1,3,5];
+  evenNumbers=[2,4]
+  onlyOdd=false;
   
   onServerAdded(serverData:{serverName:string, serverContent:string}) {
     this.serverElements.push({
@@ -24,7 +27,6 @@ export class AppComponent {
     });
   }
   
-
   onChangeFirst(){
     this.serverElements[0].name='Changed';
   }
